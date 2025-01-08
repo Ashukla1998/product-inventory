@@ -1,0 +1,21 @@
+<div id="<%= dom_id product %>" class="card shadow-sm border-0 mb-4">
+  <div class="card-body">
+    <h5 class="card-title text-primary"><%= product.name %></h5>
+    
+    <p class="mb-2">
+      <strong>Total Boxes:</strong> <%= product.total_box %>
+    </p>
+
+    <p class="mb-2">
+      <strong>Items Per Box:</strong> <%= product.item_per_box %>
+    </p>
+
+    <p class="mb-2">
+      <strong>Description:</strong> <%= product.description %>
+    </p>
+
+    <p class="mb-0">
+      <strong>Total Items:</strong> <%= product.total_box * product.item_per_box %>
+    </p>
+  </div>
+</div>

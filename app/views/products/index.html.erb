@@ -1,0 +1,33 @@
+<% content_for :title, "Products" %>
+
+<div class="container mt-5">
+  <% if notice.present? %>
+    <div class="alert alert-success">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <h1 class="text-primary mb-4">Products</h1>
+
+  <div id="products" class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-dark"><%= product.name %></h5>
+            <p class="card-text">
+              <strong>Total Boxes:</strong> <%= product.total_box %><br>
+              <strong>Items Per Box:</strong> <%= product.item_per_box %><br>
+              <strong>Total Items:</strong> <%= product.total_box * product.item_per_box %>
+            </p>
+            <%= link_to "Show this product", product, class: "btn btn-primary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-end">
+    <%= link_to "New Product", new_product_path, class: "btn btn-success btn-lg" %>
+  </div>
+</div>
